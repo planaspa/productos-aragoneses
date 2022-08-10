@@ -4,10 +4,10 @@ No me des la chapa... ¡Quiero ver [el listado](#listado-de-productos-aragoneses
 
 ## Objetivo
 ¿Cuales son los productos digitales aragoneses más exitosos? ¿Cómo es posible que no lo sepas? 
-Este listado nace de mi curiosidad personal por descubrir todos aquellos productos digitales de éxito existentes en Aragón, generando una base de conocimiento abierta de la que todos podamos aprender.
+Este listado nace de mi curiosidad personal por descubrir todos aquellos productos digitales de éxito existentes en Aragón, generando una base de conocimiento abierta de la que todos podamos nutrir.
 
 ## ¿Qué productos digitales aparecen en la lista?
-Por ahora la investigación solo permite recopilar productos digitales que cumplan dos requisitos:
+Por ahora la investigación solo permite recopilar productos digitales que cumplan tres requisitos:
 1. El producto cumpla ésta [definición](#productos-digitales) de producto digital.
 2. El producto sea [aragonés](#aragonés).
 3. El producto debe seguir estando en activo, lo que implica que tiene usuarios utilizandolo de manera activa o pagando por el.
@@ -23,7 +23,7 @@ Por ahora la investigación solo permite recopilar productos digitales que cumpl
  
 ### Aragonés
 Buscamos empresas aragonesas con al menos un producto digital de referencia.
-Su sede oficial (*headquarters* en inglés si os mola más) deben de estar actualmente en algún municipio de Aragón.
+Su sede oficial (*headquarters* en inglés si te mola más) deben de estar actualmente en algún municipio de Aragón.
 
 ## Datos abiertos
 Este listado se crea de manera abierta a toda la comunidad con doble objetivo:
