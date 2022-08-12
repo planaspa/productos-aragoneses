@@ -32,7 +32,7 @@ Por ahora la investigación solo permite recopilar productos digitales que cumpl
 ### Aragonés
 
 Buscamos empresas aragonesas con al menos un producto digital de referencia.
-Su sede oficial (*headquarters* en inglés si te mola más) deben de estar actualmente en algún municipio de Aragón.
+Su sede oficial (*headquarters* en inglés si te mola más) debe de estar situada actualmente en algún municipio de Aragón.
 
 ## Datos abiertos
 
