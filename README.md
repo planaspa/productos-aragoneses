@@ -7,22 +7,22 @@ No me des la chapa... ¡Quiero ver [el listado](listado.csv)!
 ## Objetivo
 
 ¿Cuales son los productos digitales aragoneses más exitosos? ¿Cómo es posible que no lo sepas?
-Este listado nace de mi curiosidad personal por descubrir todos aquellos productos digitales de éxito existentes en Aragón, generando una base de conocimiento abierta de la que todos podamos nutrir.
+Este listado nace de mi curiosidad personal por descubrir todos aquellos productos digitales de éxito existentes en Aragón, generando una base de conocimiento abierta de la que todos nos podamos nutrir.
 
 ## ¿Qué productos digitales aparecen en la lista?
 
-Por ahora la investigación solo permite recopilar productos digitales que cumplan tres requisitos:
+Por ahora la investigación solo permite recopilar productos digitales que cumplan los siguientes tres requisitos:
 
-1. El producto cumpla ésta [definición](#productos-digitales) de producto digital.
-1. El producto sea [aragonés](#aragonés).
-1. El producto debe seguir estando en activo, lo que implica que tiene usuarios utilizandolo de manera activa o pagando por el.
+1. El producto debe cumplir ésta [definición](#productos-digitales) de producto digital.
+1. El producto debe ser [aragonés](#aragonés).
+1. El producto debe seguir estando en activo, lo que implica que posee usuarios utilizándolo de manera activa a día de hoy o pagando por el.
 
 ### Productos digitales
 
 ¿A qué denominamos producto digital?
 
 * Definimos producto digital como una colección de capacidades software que aporten valor para un segmento de clientes definido.
-* Un producto digital puede ser una combinación de solo capacidades software y datos o puede comprender cualquier combinación de software, hardware, instalaciones y servicios, según sea necesario para brindar la experiencia completa del producto.
+* Un producto digital puede ser una combinación de capacidades software y datos o puede comprender cualquier combinación de software, hardware, instalaciones y servicios, según sea necesario para brindar la experiencia completa del producto.
 * Podemos estar hablando de capacidades software que permitan la realización de una acción repetible o de plataformas digitales.
 
 ¿Pueden incluirse en este listado productos con una componente hardware?
