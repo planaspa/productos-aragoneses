@@ -2,7 +2,7 @@
 
 # Listado de productos digitales aragoneses en activo
 
-No me des la chapa... ¡Quiero ver [el listado](listado.csv)!
+No me des la chapa... ¡Quiero ver el listado de [productos digitales](listado.csv) y de [e-commerce](ecommerce.csv)!
 
 ## Objetivo
 
