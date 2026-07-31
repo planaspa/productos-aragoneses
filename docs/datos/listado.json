@@ -1,6 +1,6 @@
 {
   "nombre": "listado",
-  "generado_en": "2026-07-31T21:01:26Z",
+  "generado_en": "2026-07-31T21:11:47Z",
   "licencia": "CC0-1.0",
   "total": 81,
   "registros": [
@@ -156,9 +156,9 @@
       "descripcion": "Aplicación para descubrir rutas de senderismo y nieve.",
       "web": "https://www.dersu.uz/es",
       "fecha_alta": "2022-08-22",
-      "ultima_verificacion": "2022-08-22",
+      "ultima_verificacion": "2026-07-31",
       "fuente": "https://www.dersu.uz/es",
-      "estado": "activo"
+      "estado": "inactivo"
     },
     {
       "id": "dive-medical",
@@ -276,9 +276,9 @@
       "descripcion": "Aplicación móvil para conectar a locales de hostelería con comensales enfocados en las zonas rurales de Aragón.",
       "web": "https://gastrik.es/",
       "fecha_alta": "2022-08-25",
-      "ultima_verificacion": "2022-08-25",
+      "ultima_verificacion": "2026-07-31",
       "fuente": "https://gastrik.es/",
-      "estado": "activo"
+      "estado": "inactivo"
     },
     {
       "id": "gisir",
@@ -336,9 +336,9 @@
       "descripcion": "Sistema de venta de entradas para la industria de los centros de ocio. Integrado en más de 96 museos y monumentos y en 29 parques temáticos.",
       "web": "https://www.hiberus.com/iacpos",
       "fecha_alta": "2022-08-22",
-      "ultima_verificacion": "2022-08-22",
+      "ultima_verificacion": "2026-07-31",
       "fuente": "https://www.hiberus.com/iacpos",
-      "estado": "activo"
+      "estado": "inactivo"
     },
     {
       "id": "icollege",
@@ -348,9 +348,9 @@
       "descripcion": "Plataforma virtual orientada a mejorar y unificar la gestión de los centros educativos, facilitando el seguimiento de los datos académicos.",
       "web": "https://www.hiberus.com/icollege-gestion-centros-educativos",
       "fecha_alta": "2022-08-22",
-      "ultima_verificacion": "2022-08-22",
+      "ultima_verificacion": "2026-07-31",
       "fuente": "https://www.hiberus.com/icollege-gestion-centros-educativos",
-      "estado": "activo"
+      "estado": "inactivo"
     },
     {
       "id": "iriusrisk",
@@ -444,9 +444,9 @@
       "descripcion": "Sistema que permite realizar copias de seguridad vía Internet, tanto de servidores, como de ordenadores y portátiles",
       "web": "https://seycob.es/",
       "fecha_alta": "2022-08-11",
-      "ultima_verificacion": "2022-08-11",
+      "ultima_verificacion": "2026-07-31",
       "fuente": "https://seycob.es/",
-      "estado": "activo"
+      "estado": "inactivo"
     },
     {
       "id": "sintra",
@@ -528,9 +528,9 @@
       "descripcion": "Plataforma digital para conectar a usuarios con profesionales de la salud y el bienestar de todas las disiciplinas sanitarias.",
       "web": "https://www.wellic.es/",
       "fecha_alta": "2022-09-17",
-      "ultima_verificacion": "2022-09-17",
+      "ultima_verificacion": "2026-07-31",
       "fuente": "https://www.wellic.es/",
-      "estado": "activo"
+      "estado": "inactivo"
     },
     {
       "id": "xalok",
@@ -564,9 +564,9 @@
       "descripcion": "Solución de cartelería digital para hoteles y otros establecimientos hoteleros.",
       "web": "https://www.zafiro.tv/digital_signage/",
       "fecha_alta": "2022-08-25",
-      "ultima_verificacion": "2022-08-25",
+      "ultima_verificacion": "2026-07-31",
       "fuente": "https://www.zafiro.tv/digital_signage/",
-      "estado": "activo"
+      "estado": "inactivo"
     },
     {
       "id": "zafiro-mobile",
@@ -722,7 +722,7 @@
       "fecha_alta": "2026-07-31",
       "ultima_verificacion": "2026-07-31",
       "fuente": "https://www.innovaspain.com/canciones-personalizadas-regalos-singerfy/",
-      "estado": "activo"
+      "estado": "inactivo"
     },
     {
       "id": "cassandra-ai",
@@ -926,7 +926,7 @@
       "fecha_alta": "2026-07-31",
       "ultima_verificacion": "2026-07-31",
       "fuente": "https://espublico.tech/compania",
-      "estado": "activo"
+      "estado": "inactivo"
     },
     {
       "id": "sennslab",
@@ -962,7 +962,7 @@
       "fecha_alta": "2026-07-31",
       "ultima_verificacion": "2026-07-31",
       "fuente": "https://www.bitbrain.com/es/productos-neurotecnologia/software/test-de-respuesta-implicita",
-      "estado": "activo"
+      "estado": "inactivo"
     },
     {
       "id": "casandraiot",

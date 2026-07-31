@@ -1,6 +1,6 @@
 {
   "nombre": "ecommerce",
-  "generado_en": "2026-07-31T21:01:26Z",
+  "generado_en": "2026-07-31T21:11:47Z",
   "licencia": "CC0-1.0",
   "total": 5,
   "registros": [
@@ -48,9 +48,9 @@
       "descripcion": "Venta de trufa negra de Teruel",
       "web": "https://lafinesse.es/",
       "fecha_alta": "2022-08-22",
-      "ultima_verificacion": "2022-08-22",
+      "ultima_verificacion": "2026-07-31",
       "fuente": "https://lafinesse.es/",
-      "estado": "activo"
+      "estado": "inactivo"
     },
     {
       "id": "flip-and-flip",
