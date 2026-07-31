@@ -1,0 +1,44 @@
+name: Reportar error en los datos
+description: URL rota, sede incorrecta, producto inactivo u otro error
+title: "[Datos] "
+labels: ["datos"]
+body:
+  - type: input
+    id: id_registro
+    attributes:
+      label: ID del registro (si lo conoces)
+      placeholder: cuentica
+
+  - type: input
+    id: nombre
+    attributes:
+      label: Nombre del producto o tienda
+    validations:
+      required: true
+
+  - type: dropdown
+    id: tipo_error
+    attributes:
+      label: Tipo de error
+      options:
+        - URL rota o incorrecta
+        - Ubicación de sede incorrecta
+        - Producto ya no está activo
+        - Descripción incorrecta o desactualizada
+        - Duplicado
+        - Otro
+    validations:
+      required: true
+
+  - type: textarea
+    id: detalle
+    attributes:
+      label: Detalle del error
+      description: Qué está mal y, si puedes, la corrección propuesta
+    validations:
+      required: true
+
+  - type: input
+    id: fuente
+    attributes:
+      label: Enlace de evidencia (opcional)

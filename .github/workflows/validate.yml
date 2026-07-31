@@ -1,0 +1,39 @@
+name: Validar datos
+
+on:
+  pull_request:
+    paths:
+      - "**.csv"
+      - "schemas/**"
+      - "scripts/**"
+      - "datapackage.json"
+  push:
+    branches: [main]
+    paths:
+      - "**.csv"
+      - "schemas/**"
+      - "scripts/**"
+      - "datapackage.json"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validar esquema CSV
+        run: python3 scripts/validate.py
+
+      - name: Exportar JSON
+        run: python3 scripts/export_json.py
+
+      - name: Comprobar JSON sincronizado
+        run: |
+          git diff --exit-code datos/ docs/datos/ || (
+            echo "Los JSON en datos/ o docs/datos/ no están sincronizados con los CSV."
+            echo "Ejecuta: python3 scripts/export_json.py"
+            exit 1
+          )

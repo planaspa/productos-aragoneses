@@ -1,0 +1,110 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "title": "Identificador estable",
+      "description": "Slug único e inmutable del producto. Solo minúsculas, números y guiones.",
+      "type": "string",
+      "constraints": {
+        "required": true,
+        "unique": true,
+        "maxLength": 80,
+        "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+      }
+    },
+    {
+      "name": "nombre",
+      "title": "Nombre del producto",
+      "description": "Nombre comercial del producto digital.",
+      "type": "string",
+      "constraints": {
+        "required": true,
+        "maxLength": 200
+      }
+    },
+    {
+      "name": "nombre_compania",
+      "title": "Nombre de la compañía",
+      "description": "Razón social o marca de la empresa propietaria.",
+      "type": "string",
+      "constraints": {
+        "required": true,
+        "maxLength": 200
+      }
+    },
+    {
+      "name": "ubicacion_sede",
+      "title": "Ubicación de la sede",
+      "description": "Municipio y provincia de la sede oficial, formato: Municipio, Provincia.",
+      "type": "string",
+      "constraints": {
+        "required": true,
+        "maxLength": 120,
+        "pattern": "^.+,.+$"
+      }
+    },
+    {
+      "name": "descripcion",
+      "title": "Descripción del producto",
+      "description": "Resumen del valor que aporta el producto a sus usuarios.",
+      "type": "string",
+      "constraints": {
+        "required": true,
+        "maxLength": 2000
+      }
+    },
+    {
+      "name": "web",
+      "title": "Web del producto",
+      "description": "URL pública del producto o página principal del mismo.",
+      "type": "anyuri",
+      "format": "uri",
+      "constraints": {
+        "required": true,
+        "maxLength": 500
+      }
+    },
+    {
+      "name": "fecha_alta",
+      "title": "Fecha de alta",
+      "description": "Fecha en que el registro se incorporó al listado (ISO 8601: YYYY-MM-DD).",
+      "type": "date",
+      "format": "default",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "ultima_verificacion",
+      "title": "Última verificación",
+      "description": "Fecha de la última comprobación de que el producto sigue activo (ISO 8601).",
+      "type": "date",
+      "format": "default",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "fuente",
+      "title": "Fuente",
+      "description": "URL que acredita la información del registro (web del producto, registro mercantil, nota de prensa, etc.).",
+      "type": "anyuri",
+      "format": "uri",
+      "constraints": {
+        "required": true,
+        "maxLength": 500
+      }
+    },
+    {
+      "name": "estado",
+      "title": "Estado",
+      "description": "Estado del registro en el catálogo.",
+      "type": "string",
+      "constraints": {
+        "required": true,
+        "enum": ["activo", "inactivo", "en_revision"]
+      }
+    }
+  ],
+  "missingValues": [""]
+}

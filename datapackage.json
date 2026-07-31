@@ -1,0 +1,78 @@
+{
+  "profile": "tabular-data-package",
+  "name": "productos-aragoneses",
+  "title": "Productos digitales y e-commerce aragoneses en activo",
+  "description": "Catálogo abierto de productos digitales y tiendas online con sede en Aragón que siguen activos.",
+  "homepage": "https://github.com/planaspa/productos-aragoneses",
+  "version": "2.0.0",
+  "created": "2026-07-31",
+  "licenses": [
+    {
+      "name": "CC0-1.0",
+      "title": "Creative Commons Zero v1.0 Universal",
+      "path": "LICENSE"
+    }
+  ],
+  "keywords": [
+    "aragón",
+    "productos digitales",
+    "e-commerce",
+    "startup",
+    "open data",
+    "datos abiertos"
+  ],
+  "contributors": [
+    {
+      "title": "Comunidad productos-aragoneses",
+      "role": "author"
+    }
+  ],
+  "resources": [
+    {
+      "name": "listado",
+      "title": "Productos digitales",
+      "path": "listado.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": "schemas/listado.schema.json",
+      "bytes": null,
+      "hash": null
+    },
+    {
+      "name": "ecommerce",
+      "title": "E-commerce",
+      "path": "ecommerce.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": "schemas/ecommerce.schema.json",
+      "bytes": null,
+      "hash": null
+    },
+    {
+      "name": "listado-json",
+      "title": "Productos digitales (JSON)",
+      "path": "datos/listado.json",
+      "format": "json",
+      "mediatype": "application/json",
+      "encoding": "utf-8"
+    },
+    {
+      "name": "ecommerce-json",
+      "title": "E-commerce (JSON)",
+      "path": "datos/ecommerce.json",
+      "format": "json",
+      "mediatype": "application/json",
+      "encoding": "utf-8"
+    },
+    {
+      "name": "catalogo",
+      "title": "Catálogo de datasets",
+      "path": "datos/catalogo.json",
+      "format": "json",
+      "mediatype": "application/json",
+      "encoding": "utf-8"
+    }
+  ]
+}

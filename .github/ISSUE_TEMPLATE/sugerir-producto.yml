@@ -1,0 +1,71 @@
+name: Sugerir producto
+description: Proponer un alta o corrección sin editar CSV directamente
+title: "[Sugerencia] "
+labels: ["sugerencia"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Gracias por ampliar el catálogo. Un mantenedor revisará la sugerencia y, si procede, la incorporará al CSV.
+        También puedes [abrir un Pull Request](../CONTRIBUTING.md) si prefieres editar los datos tú mismo.
+
+  - type: dropdown
+    id: dataset
+    attributes:
+      label: Tipo de registro
+      options:
+        - Producto digital (listado.csv)
+        - E-commerce (ecommerce.csv)
+        - Corrección de un registro existente
+    validations:
+      required: true
+
+  - type: input
+    id: nombre
+    attributes:
+      label: Nombre del producto o tienda
+    validations:
+      required: true
+
+  - type: input
+    id: compania
+    attributes:
+      label: Nombre de la compañía
+    validations:
+      required: true
+
+  - type: input
+    id: ubicacion
+    attributes:
+      label: Ubicación de la sede
+      description: "Formato: Municipio, Provincia (p. ej. Zaragoza, Zaragoza)"
+      placeholder: "Zaragoza, Zaragoza"
+    validations:
+      required: true
+
+  - type: textarea
+    id: descripcion
+    attributes:
+      label: Descripción
+      description: Qué hace el producto o qué vende la tienda
+    validations:
+      required: true
+
+  - type: input
+    id: web
+    attributes:
+      label: URL del producto o tienda
+    validations:
+      required: true
+
+  - type: input
+    id: fuente
+    attributes:
+      label: URL de fuente / evidencia
+      description: Web corporativa, nota de prensa u otra prueba de sede o actividad
+
+  - type: textarea
+    id: notas
+    attributes:
+      label: Notas adicionales
+      description: Criterios dudosos, productos relacionados, etc.

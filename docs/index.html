@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Productos digitales aragoneses</title>
+  <meta name="description" content="Catálogo abierto de productos digitales y e-commerce con sede en Aragón.">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <p class="eyebrow">Datos abiertos · CC0 1.0</p>
+      <h1>Productos digitales aragoneses</h1>
+      <p class="lead">Catálogo comunitario de productos digitales y tiendas online con sede en Aragón que siguen activos.</p>
+      <nav class="header-links">
+        <a href="https://github.com/planaspa/productos-aragoneses">GitHub</a>
+        <a href="https://github.com/planaspa/productos-aragoneses/blob/main/CONTRIBUTING.md">Contribuir</a>
+        <a href="https://github.com/planaspa/productos-aragoneses/blob/main/CONSUMO.md">API / JSON</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="controls">
+      <div class="tabs" role="tablist">
+        <button class="tab active" data-dataset="listado" role="tab" aria-selected="true">Productos digitales</button>
+        <button class="tab" data-dataset="ecommerce" role="tab" aria-selected="false">E-commerce</button>
+      </div>
+      <div class="filters">
+        <label>
+          <span class="sr-only">Buscar</span>
+          <input type="search" id="search" placeholder="Buscar por nombre, empresa o ubicación…" autocomplete="off">
+        </label>
+        <label>
+          Provincia
+          <select id="provincia">
+            <option value="">Todas</option>
+          </select>
+        </label>
+        <label>
+          Estado
+          <select id="estado">
+            <option value="activo">Activos</option>
+            <option value="">Todos</option>
+            <option value="inactivo">Inactivos</option>
+            <option value="en_revision">En revisión</option>
+          </select>
+        </label>
+      </div>
+      <p id="stats" class="stats" aria-live="polite"></p>
+    </section>
+
+    <section id="results" class="results" aria-live="polite"></section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>
+        Licencia <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a>.
+        Datos en <a href="https://github.com/planaspa/productos-aragoneses/tree/main/datos">JSON</a>
+        y <a href="https://github.com/planaspa/productos-aragoneses/tree/main/listado.csv">CSV</a>.
+      </p>
+    </div>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>

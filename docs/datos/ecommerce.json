@@ -1,0 +1,68 @@
+{
+  "nombre": "ecommerce",
+  "generado_en": "2026-07-31T13:45:13Z",
+  "licencia": "CC0-1.0",
+  "total": 5,
+  "registros": [
+    {
+      "id": "aceros-de-hispania",
+      "nombre": "Aceros de Hispania",
+      "nombre_compania": "Aceros de Hispania Bajo Aragón, S.L",
+      "ubicacion_sede": "Castelserás, Teruel",
+      "descripcion": "Cuchillos, navajas y espadas. Otros artículos",
+      "web": "https://www.aceros-de-hispania.com/",
+      "fecha_alta": "2026-07-31",
+      "ultima_verificacion": "2026-07-31",
+      "fuente": "https://www.aceros-de-hispania.com/",
+      "estado": "activo"
+    },
+    {
+      "id": "barrabes",
+      "nombre": "Barrabes",
+      "nombre_compania": "Barrabes",
+      "ubicacion_sede": "Benasque, Huesca",
+      "descripcion": "Venta de material de montaña y esquí.",
+      "web": "https://www.barrabes.com/",
+      "fecha_alta": "2026-07-31",
+      "ultima_verificacion": "2026-07-31",
+      "fuente": "https://www.barrabes.com/",
+      "estado": "activo"
+    },
+    {
+      "id": "funidelia",
+      "nombre": "Funidelia",
+      "nombre_compania": "FUNIGLOBAL DEVELOPMENT",
+      "ubicacion_sede": "Zaragoza, Zaragoza",
+      "descripcion": "Venta de disfraces.",
+      "web": "https://www.funidelia.es/",
+      "fecha_alta": "2026-07-31",
+      "ultima_verificacion": "2026-07-31",
+      "fuente": "https://www.funidelia.es/",
+      "estado": "activo"
+    },
+    {
+      "id": "la-finesse-truffles",
+      "nombre": "La Finesse Truffles",
+      "nombre_compania": "La Finesse Truffles",
+      "ubicacion_sede": "Teruel, Teruel",
+      "descripcion": "Venta de trufa negra de Teruel",
+      "web": "https://lafinesse.es/",
+      "fecha_alta": "2026-07-31",
+      "ultima_verificacion": "2026-07-31",
+      "fuente": "https://lafinesse.es/",
+      "estado": "activo"
+    },
+    {
+      "id": "flip-and-flip",
+      "nombre": "Flip&Flip",
+      "nombre_compania": "Flip&Flip",
+      "ubicacion_sede": "Fuentes de Ebro, Zaragoza",
+      "descripcion": "Productos de moda 'eco' con materiales reciclados",
+      "web": "https://www.flipandflip.com/",
+      "fecha_alta": "2026-07-31",
+      "ultima_verificacion": "2026-07-31",
+      "fuente": "https://www.flipandflip.com/",
+      "estado": "activo"
+    }
+  ]
+}
