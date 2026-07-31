@@ -11,6 +11,8 @@ const DATASETS = {
   },
 };
 
+const PROVINCIAS = ["Zaragoza", "Huesca", "Teruel"];
+
 const state = {
   dataset: "listado",
   records: [],
@@ -24,11 +26,16 @@ const els = {
   estado: document.getElementById("estado"),
   results: document.getElementById("results"),
   stats: document.getElementById("stats"),
+  provinciaStats: document.getElementById("provincia-stats"),
 };
 
 function provinciaFromLocation(location) {
   const parts = location.split(",").map((part) => part.trim());
   return parts.length > 1 ? parts[parts.length - 1] : location;
+}
+
+function provinciaClass(name) {
+  return name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 }
 
 function badgeClass(estado) {
@@ -47,24 +54,56 @@ function badgeLabel(estado) {
   );
 }
 
+function escapeHtml(text) {
+  return text
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
 function renderCard(record) {
-  const title = record.nombre;
-  const web = record.web;
+  const prov = provinciaFromLocation(record.ubicacion_sede);
+  const provCls = provinciaClass(prov);
+  const municipio = record.ubicacion_sede.split(",")[0].trim();
+
   return `
-    <article class="card" id="producto-${record.id}">
+    <article class="card ${provCls}" id="producto-${record.id}">
       <div class="card-header">
-        <h2><a href="${web}" target="_blank" rel="noopener noreferrer">${title}</a></h2>
+        <h2><a href="${escapeHtml(record.web)}" target="_blank" rel="noopener noreferrer">${escapeHtml(record.nombre)}</a></h2>
         <span class="${badgeClass(record.estado)}">${badgeLabel(record.estado)}</span>
       </div>
-      <p class="meta"><strong>${record.nombre_compania}</strong> · ${record.ubicacion_sede}</p>
-      <p>${record.descripcion}</p>
+      <p class="meta">
+        <span class="meta-company">${escapeHtml(record.nombre_compania)}</span>
+        <span class="prov-tag ${provCls}">${escapeHtml(municipio)} · ${escapeHtml(prov)}</span>
+      </p>
+      <p class="card-desc">${escapeHtml(record.descripcion)}</p>
       <div class="card-footer">
-        <span>id: <code>${record.id}</code></span>
-        <span>Verificado: ${record.ultima_verificacion}</span>
-        <a href="${record.fuente}" target="_blank" rel="noopener noreferrer">Fuente</a>
+        <span class="card-meta-id">id: <code>${escapeHtml(record.id)}</code></span>
+        <a class="card-cta" href="${escapeHtml(record.web)}" target="_blank" rel="noopener noreferrer">
+          Visitar →
+        </a>
       </div>
     </article>
   `;
+}
+
+function countByProvincia(records) {
+  const counts = Object.fromEntries(PROVINCIAS.map((p) => [p, 0]));
+  for (const record of records) {
+    const prov = provinciaFromLocation(record.ubicacion_sede);
+    if (prov in counts) counts[prov] += 1;
+  }
+  return counts;
+}
+
+function renderProvinciaStats(records) {
+  const counts = countByProvincia(records);
+  els.provinciaStats.innerHTML = PROVINCIAS.map((prov) => {
+    const n = counts[prov];
+    if (!n) return "";
+    return `<span class="prov-chip ${provinciaClass(prov)}">${prov}: ${n}</span>`;
+  }).join("");
 }
 
 function applyFilters() {
@@ -96,14 +135,16 @@ function applyFilters() {
 
 function renderResults() {
   if (!state.filtered.length) {
-    els.results.innerHTML = `<p class="empty">No hay resultados con los filtros actuales.</p>`;
+    els.results.innerHTML =
+      `<p class="empty">Ningún producto coincide con los filtros. Prueba otra provincia o búsqueda.</p>`;
   } else {
     els.results.innerHTML = state.filtered.map(renderCard).join("");
   }
 
   const total = state.records.length;
   const shown = state.filtered.length;
-  els.stats.textContent = `${shown} de ${total} registros · ${DATASETS[state.dataset].label}`;
+  els.stats.innerHTML = `<strong>${shown}</strong> de ${total} · ${DATASETS[state.dataset].label}`;
+  renderProvinciaStats(state.filtered);
 }
 
 function populateProvincias(records) {
@@ -112,7 +153,7 @@ function populateProvincias(records) {
   ].sort((a, b) => a.localeCompare(b, "es"));
 
   els.provincia.innerHTML =
-    `<option value="">Todas</option>` +
+    `<option value="">Todas (Aragón)</option>` +
     provincias.map((p) => `<option value="${p}">${p}</option>`).join("");
 }
 

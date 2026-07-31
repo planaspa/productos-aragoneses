@@ -3,39 +3,68 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Productos digitales aragoneses</title>
-  <meta name="description" content="Catálogo abierto de productos digitales y e-commerce con sede en Aragón.">
+  <title>Productos digitales aragoneses · Aragón, España</title>
+  <meta name="description" content="Catálogo abierto de software y productos digitales con sede en Aragón, España.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
+  <div class="flag-bar" aria-hidden="true"></div>
+
   <header class="site-header">
-    <div class="wrap">
-      <p class="eyebrow">Datos abiertos · CC0 1.0</p>
-      <h1>Productos digitales aragoneses</h1>
-      <p class="lead">Catálogo comunitario de productos digitales y tiendas online con sede en Aragón que siguen activos.</p>
-      <nav class="header-links">
-        <a href="https://github.com/planaspa/productos-aragoneses">GitHub</a>
-        <a href="https://github.com/planaspa/productos-aragoneses/blob/main/CONTRIBUTING.md">Contribuir</a>
-        <a href="https://github.com/planaspa/productos-aragoneses/blob/main/CONSUMO.md">API / JSON</a>
+    <div class="wrap header-grid">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">
+          <span class="logo-bracket">&lt;</span>
+          <span class="logo-core">AR</span>
+          <span class="logo-bracket">/&gt;</span>
+        </div>
+        <div>
+          <p class="eyebrow">Ecosistema digital · Aragón, España</p>
+          <h1>Productos digitales aragoneses</h1>
+          <p class="lead">Directorio abierto de software, plataformas y e-commerce con sede en Huesca, Teruel o Zaragoza.</p>
+        </div>
+      </div>
+      <nav class="header-links" aria-label="Enlaces del proyecto">
+        <a class="header-link" href="https://github.com/planaspa/productos-aragoneses">
+          <span class="link-icon" aria-hidden="true">⌘</span> GitHub
+        </a>
+        <a class="header-link" href="https://github.com/planaspa/productos-aragoneses/blob/main/CONTRIBUTING.md">
+          <span class="link-icon" aria-hidden="true">+</span> Contribuir
+        </a>
+        <a class="header-link" href="https://github.com/planaspa/productos-aragoneses/blob/main/CONSUMO.md">
+          <span class="link-icon" aria-hidden="true">{ }</span> API
+        </a>
       </nav>
     </div>
   </header>
 
   <main class="wrap">
     <section class="controls">
-      <div class="tabs" role="tablist">
-        <button class="tab active" data-dataset="listado" role="tab" aria-selected="true">Productos digitales</button>
-        <button class="tab" data-dataset="ecommerce" role="tab" aria-selected="false">E-commerce</button>
+      <div class="controls-top">
+        <div class="tabs" role="tablist" aria-label="Tipo de catálogo">
+          <button class="tab active" data-dataset="listado" role="tab" aria-selected="true">
+            <span class="tab-icon" aria-hidden="true">◆</span> Productos digitales
+          </button>
+          <button class="tab" data-dataset="ecommerce" role="tab" aria-selected="false">
+            <span class="tab-icon" aria-hidden="true">◈</span> E-commerce
+          </button>
+        </div>
+        <p class="open-data-badge">Datos abiertos · CC0 1.0</p>
       </div>
+
       <div class="filters">
-        <label>
+        <label class="search-field">
           <span class="sr-only">Buscar</span>
-          <input type="search" id="search" placeholder="Buscar por nombre, empresa o ubicación…" autocomplete="off">
+          <span class="field-icon" aria-hidden="true">⌕</span>
+          <input type="search" id="search" placeholder="Buscar producto, empresa, municipio…" autocomplete="off">
         </label>
         <label>
           Provincia
           <select id="provincia">
-            <option value="">Todas</option>
+            <option value="">Todas (Aragón)</option>
           </select>
         </label>
         <label>
@@ -48,18 +77,25 @@
           </select>
         </label>
       </div>
-      <p id="stats" class="stats" aria-live="polite"></p>
+
+      <div class="stats-row">
+        <p id="stats" class="stats" aria-live="polite"></p>
+        <div id="provincia-stats" class="provincia-stats" aria-live="polite"></div>
+      </div>
     </section>
 
     <section id="results" class="results" aria-live="polite"></section>
   </main>
 
   <footer class="site-footer">
-    <div class="wrap">
+    <div class="wrap footer-grid">
       <p>
+        Mapa comunitario del software hecho en <strong>Aragón</strong>.
         Licencia <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a>.
-        Datos en <a href="https://github.com/planaspa/productos-aragoneses/tree/main/datos">JSON</a>
-        y <a href="https://github.com/planaspa/productos-aragoneses/tree/main/listado.csv">CSV</a>.
+      </p>
+      <p class="footer-links">
+        <a href="https://github.com/planaspa/productos-aragoneses/tree/main/datos">JSON</a>
+        <a href="https://github.com/planaspa/productos-aragoneses/tree/main/listado.csv">CSV</a>
       </p>
     </div>
   </footer>
