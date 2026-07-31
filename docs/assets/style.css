@@ -100,7 +100,8 @@ a:hover {
   padding: 2rem 0 2.25rem;
   border-bottom: 3px solid var(--aragon-yellow);
   position: relative;
-  overflow: hidden;
+  z-index: 200;
+  overflow: visible;
 }
 
 .site-header::before {
@@ -183,6 +184,8 @@ a:hover {
   display: flex;
   gap: 0.5rem;
   flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
 }
 
 .header-link {
@@ -208,6 +211,7 @@ a:hover {
 
 .download-menu {
   position: relative;
+  z-index: 10;
 }
 
 .download-toggle {
@@ -219,13 +223,13 @@ a:hover {
   position: absolute;
   top: calc(100% + 0.5rem);
   right: 0;
-  z-index: 20;
+  z-index: 300;
   min-width: 15rem;
   padding: 0.65rem;
   border-radius: var(--radius-sm);
   background: var(--surface);
-  border: 1px solid var(--border-soft);
-  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  box-shadow: 0 12px 40px rgba(15, 23, 42, 0.18);
 }
 
 .download-panel[hidden] {
@@ -291,6 +295,8 @@ a:hover {
 /* —— Main —— */
 main {
   padding: 1.75rem 0 3.5rem;
+  position: relative;
+  z-index: 1;
 }
 
 .controls {
