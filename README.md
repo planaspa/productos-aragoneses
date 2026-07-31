@@ -63,11 +63,15 @@ Consulta [CONSUMO.md](CONSUMO.md) para URLs de descarga directa, ejemplos en Pyt
 
 ### GitHub Pages
 
-El catálogo web se publica desde la carpeta [`docs/`](docs/). Para activarlo en un fork:
+El catálogo web se publica en **https://planaspa.github.io/productos-aragoneses/** mediante GitHub Actions (workflow [`pages.yml`](.github/workflows/pages.yml)).
+
+Si el enlace devuelve 404, actívalo una sola vez:
 
 1. **Settings → Pages**
-2. Source: **Deploy from a branch**
-3. Branch: `main` / folder: **`/docs`**
+2. En **Build and deployment → Source**, elige **GitHub Actions**
+3. Ejecuta el workflow *Publicar catálogo* desde la pestaña **Actions** (o haz push a `main`)
+
+En un fork, sustituye el dominio por `https://<tu-usuario>.github.io/productos-aragoneses/`.
 
 ## Contribuir
 
