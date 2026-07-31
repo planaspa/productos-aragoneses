@@ -69,9 +69,9 @@ Si el enlace devuelve 404, actívalo una sola vez:
 
 1. **Settings → Pages**
 2. En **Build and deployment → Source**, elige **GitHub Actions**
-3. Ejecuta el workflow *Publicar catálogo* desde la pestaña **Actions** (o haz push a `main`)
+3. Vuelve a **Actions → Publicar catálogo (GitHub Pages) → Run workflow**
 
-En un fork, sustituye el dominio por `https://<tu-usuario>.github.io/productos-aragoneses/`.
+El workflow intenta activar Pages automáticamente (`enablement: true`); si falla, el paso 2 es obligatorio.
 
 ## Contribuir
 
