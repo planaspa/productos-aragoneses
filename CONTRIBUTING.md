@@ -53,8 +53,10 @@ Esquemas completos: [`schemas/listado.schema.json`](schemas/listado.schema.json)
 2. Abre [`listado.csv`](listado.csv) y añade **una fila al final** con este ejemplo:
 
 ```csv
-mi-producto,Mi Producto,Mi Empresa SL,"Calatayud, Zaragoza",Descripción breve del producto.,https://ejemplo.com/producto,2026-07-31,2026-07-31,https://ejemplo.com/producto,activo
+mi-producto,Mi Producto,Mi Empresa SL,"Calatayud, Zaragoza",Descripción breve del producto.,https://ejemplo.com/producto,2026-01-15,2026-01-15,https://ejemplo.com/producto,activo
 ```
+
+Usa la fecha real del alta (`fecha_alta`) y la fecha en que comprobaste que sigue activo (`ultima_verificacion`).
 
 3. Genera un `id` único:
    - Solo minúsculas, números y guiones

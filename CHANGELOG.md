@@ -20,7 +20,7 @@ El formato se inspira en [Keep a Changelog](https://keepachangelog.com/es-ES/1.0
 
 - Cabeceras CSV normalizadas a snake_case en español
 - Formato de ubicación unificado: `Municipio, Provincia`
-- Migración de registros existentes con `fecha_alta` y `ultima_verificacion` en 2026-07-31 (fecha de migración; ver PR para detalle)
+- Migración de registros existentes con `fecha_alta` y `ultima_verificacion` según la fecha del primer commit en Git (`scripts/backfill_dates.py`)
 
 ### Corregido
 
