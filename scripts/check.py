@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Valida CSVs contra los esquemas Frictionless del repositorio."""
+"""Valida los CSV y regenera el JSON del catálogo web."""
 
 from __future__ import annotations
 
@@ -7,20 +7,19 @@ import csv
 import json
 import re
 import sys
-from datetime import date
+from datetime import date, datetime, timezone
 from pathlib import Path
 from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parent.parent
 SCHEMAS = ROOT / "schemas"
-DATASETS = {
+JSON_DIR = ROOT / "docs" / "datos"
+DATASETS = ["listado", "ecommerce"]
+CSV_SCHEMAS = {
     "listado.csv": SCHEMAS / "listado.schema.json",
     "ecommerce.csv": SCHEMAS / "ecommerce.schema.json",
 }
-
 ISO_DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
-SLUG = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
-ESTADOS = {"activo", "inactivo", "en_revision"}
 
 
 def load_schema(path: Path) -> dict:
@@ -45,10 +44,6 @@ def validate_type(value: str, field_type: str) -> bool:
     return True
 
 
-def validate_enum(value: str, options: list[str]) -> bool:
-    return value in options
-
-
 def validate_constraints(value: str, constraints: dict) -> list[str]:
     errors: list[str] = []
     if constraints.get("required") and not value.strip():
@@ -57,7 +52,7 @@ def validate_constraints(value: str, constraints: dict) -> list[str]:
         errors.append(f"supera maxLength ({constraints['maxLength']})")
     if "pattern" in constraints and not re.match(constraints["pattern"], value):
         errors.append(f"no cumple el patrón {constraints['pattern']}")
-    if "enum" in constraints and not validate_enum(value, constraints["enum"]):
+    if "enum" in constraints and value not in constraints["enum"]:
         errors.append(f"valor no permitido; use uno de {constraints['enum']}")
     return errors
 
@@ -71,11 +66,10 @@ def validate_csv(csv_path: Path, schema_path: Path) -> list[str]:
     with csv_path.open(encoding="utf-8", newline="") as handle:
         reader = csv.DictReader(handle)
         if reader.fieldnames != list(fields.keys()):
-            errors.append(
+            return [
                 f"cabeceras incorrectas: {reader.fieldnames}; "
                 f"esperado: {list(fields.keys())}"
-            )
-            return errors
+            ]
 
         for line_no, row in enumerate(reader, start=2):
             row_id = row.get("id", "")
@@ -94,24 +88,48 @@ def validate_csv(csv_path: Path, schema_path: Path) -> list[str]:
     return errors
 
 
-def main() -> int:
-    all_errors: list[str] = []
-    for csv_name, schema_path in DATASETS.items():
+def validate_all() -> list[str]:
+    errors: list[str] = []
+    for csv_name, schema_path in CSV_SCHEMAS.items():
         csv_path = ROOT / csv_name
         if not csv_path.exists():
-            all_errors.append(f"no existe {csv_name}")
+            errors.append(f"no existe {csv_name}")
             continue
-        all_errors.extend(
-            f"[{csv_name}] {err}" for err in validate_csv(csv_path, schema_path)
-        )
+        errors.extend(f"[{csv_name}] {err}" for err in validate_csv(csv_path, schema_path))
+    return errors
 
-    if all_errors:
+
+def export_json() -> None:
+    JSON_DIR.mkdir(parents=True, exist_ok=True)
+    generated = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+    for name in DATASETS:
+        with (ROOT / f"{name}.csv").open(encoding="utf-8", newline="") as handle:
+            records = list(csv.DictReader(handle))
+
+        payload = {
+            "nombre": name,
+            "generado_en": generated,
+            "licencia": "CC0-1.0",
+            "total": len(records),
+            "registros": records,
+        }
+        path = JSON_DIR / f"{name}.json"
+        with path.open("w", encoding="utf-8") as handle:
+            json.dump(payload, handle, ensure_ascii=False, indent=2)
+            handle.write("\n")
+
+
+def main() -> int:
+    errors = validate_all()
+    if errors:
         print("Errores de validación:")
-        for err in all_errors:
+        for err in errors:
             print(f"  - {err}")
         return 1
 
-    print("Validación correcta: todos los datasets cumplen el esquema.")
+    export_json()
+    print("OK: CSV válidos y JSON actualizado en docs/datos/.")
     return 0
 
 

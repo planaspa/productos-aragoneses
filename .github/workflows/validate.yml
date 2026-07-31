@@ -24,16 +24,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Validar esquema CSV
-        run: python3 scripts/validate.py
-
-      - name: Exportar JSON
-        run: python3 scripts/export_json.py
+      - name: Validar CSV y exportar JSON
+        run: python3 scripts/check.py
 
       - name: Comprobar JSON sincronizado
         run: |
-          git diff --exit-code datos/ docs/datos/ || (
-            echo "Los JSON en datos/ o docs/datos/ no están sincronizados con los CSV."
-            echo "Ejecuta: python3 scripts/export_json.py"
+          git diff --exit-code docs/datos/ || (
+            echo "Ejecuta: python3 scripts/check.py"
             exit 1
           )

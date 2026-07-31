@@ -1,95 +1,44 @@
 [![License: CC0-1.0](https://img.shields.io/badge/License-CC0%201.0-lightgrey.svg)](http://creativecommons.org/publicdomain/zero/1.0/)
 
-# Listado de productos digitales aragoneses en activo
+# Productos digitales aragoneses
 
-No me des la chapa… ¡Quiero ver el [catálogo navegable](https://planaspa.github.io/productos-aragoneses/)!
+Catálogo abierto de software y e-commerce con sede en Aragón.
 
-| Recurso | Enlace |
-|---------|--------|
-| Catálogo web | [planaspa.github.io/productos-aragoneses](https://planaspa.github.io/productos-aragoneses/) |
-| Productos digitales (CSV) | [listado.csv](listado.csv) |
-| E-commerce (CSV) | [ecommerce.csv](ecommerce.csv) |
-| JSON / API | [CONSUMO.md](CONSUMO.md) |
-| Contribuir | [CONTRIBUTING.md](CONTRIBUTING.md) |
+| | |
+|---|---|
+| **Catálogo web** | [planaspa.github.io/productos-aragoneses](https://planaspa.github.io/productos-aragoneses/) |
+| **Datos** | [listado.csv](listado.csv) · [ecommerce.csv](ecommerce.csv) |
+| **Contribuir** | [CONTRIBUTING.md](CONTRIBUTING.md) |
+| **API / JSON** | [CONSUMO.md](CONSUMO.md) |
 
-## Objetivo
+## Estructura del repositorio
 
-¿Cuáles son los productos digitales aragoneses más exitosos? ¿Cómo es posible que no lo sepas?
+```
+listado.csv, ecommerce.csv   ← fuente de verdad (editar aquí)
+schemas/                     ← esquema de columnas (Frictionless)
+scripts/check.py             ← validar CSV y regenerar JSON
+docs/                        ← catálogo web (GitHub Pages)
+  index.html, assets/
+  datos/*.json               ← generado; no editar a mano
+datapackage.json             ← metadatos del paquete de datos
+```
 
-Este listado nace de mi curiosidad personal por descubrir todos aquellos productos digitales de éxito existentes en Aragón, generando una base de conocimiento abierta de la que todos nos podamos nutrir.
+## Criterios de inclusión
 
-## ¿Qué productos digitales aparecen en la lista?
+1. **Producto digital** (o tienda en `ecommerce.csv`): software con valor para un segmento de clientes.
+2. **Aragonés**: sede oficial en un municipio de Aragón.
+3. **Activo**: usuarios o clientes de pago a día de hoy.
 
-Por ahora la investigación solo permite recopilar productos digitales que cumplan los siguientes tres requisitos:
-
-1. El producto debe cumplir esta [definición](#productos-digitales) de producto digital.
-2. El producto debe ser [aragonés](#aragonés).
-3. El producto debe seguir estando en activo, lo que implica que posee usuarios utilizándolo de manera activa a día de hoy o pagando por él.
-
-### Productos digitales
-
-¿A qué denominamos producto digital?
-
-* Definimos producto digital como una colección de capacidades software que aporten valor para un segmento de clientes definido.
-* Un producto digital puede ser una combinación de capacidades software y datos o puede comprender cualquier combinación de software, hardware, instalaciones y servicios, según sea necesario para brindar la experiencia completa del producto.
-* Podemos estar hablando de capacidades software que permitan la realización de una acción repetible o de plataformas digitales.
-
-¿Pueden incluirse en este listado productos con una componente hardware?
-
-* Sí, siempre y cuando el software sea una componente importante de cara al usuario final sin la cual el producto no tiene sentido.
-
-### Aragonés
-
-Buscamos empresas aragonesas con al menos un producto digital de referencia.
-Su sede oficial (*headquarters* en inglés si te mola más) debe estar situada actualmente en algún municipio de Aragón.
+Definiciones ampliadas en [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Datos abiertos
 
-Este listado se crea de manera abierta con una licencia [CC0 1.0](LICENSE) a toda la comunidad con doble objetivo:
+Licencia [CC0 1.0](LICENSE). Metadatos en [`datapackage.json`](datapackage.json), esquemas en [`schemas/`](schemas/).
 
-1. Cualquier persona interesada en conocer el ecosistema de productos digitales de Aragón puede acceder libremente a este listado.
-2. Cualquier persona que conozca un producto digital puede libremente **ampliar la lista** o editarla para el beneficio de la comunidad.
+## GitHub Pages
 
-### Estándares y metadatos
+Publicar el catálogo desde **`main`** / carpeta **`/docs`**: [Settings → Pages](https://github.com/planaspa/productos-aragoneses/settings/pages).
 
-El catálogo sigue el estándar [Frictionless Data Package](https://frictionlessdata.io/):
-
-* [`datapackage.json`](datapackage.json) — descriptor del paquete de datos
-* [`schemas/`](schemas/) — esquemas Table Schema (tipos, restricciones, enums)
-* Fechas en **ISO 8601** (`YYYY-MM-DD`)
-* Identificador estable `id` y campos de proveniencia en cada registro
-
-Consulta [CONSUMO.md](CONSUMO.md) para URLs de descarga directa, ejemplos en Python/JavaScript y formato JSON.
-
-### GitHub Pages (catálogo navegable)
-
-El catálogo está en [`docs/`](docs/) y se publica en **https://planaspa.github.io/productos-aragoneses/**.
-
-**Activación (solo una vez):**
-
-1. Abre [Settings → Pages](https://github.com/planaspa/productos-aragoneses/settings/pages)
-2. En **Build and deployment → Source**, elige **Deploy from a branch**
-3. En **Branch**, selecciona **`main`** y carpeta **`/docs`**
-4. Pulsa **Save** y espera 1–2 minutos
-
-No uses *GitHub Actions* como source salvo que sepas configurarlo; con `/docs` basta.
-
-Si tras guardar sigue el 404, comprueba en la misma página de Settings que aparece el mensaje *«Your site is live at…»*.
-
-## Contribuir
-
-Lee [CONTRIBUTING.md](CONTRIBUTING.md). Resumen:
-
-* Edita el CSV correspondiente y abre un Pull Request, **o**
-* Usa el issue template **«Sugerir producto»** si no usas Git
-
-Tras modificar CSVs, ejecuta:
-
-```bash
-python3 scripts/validate.py
-python3 scripts/export_json.py
-```
-
-## Registro de cambios
+## Cambios
 
 Ver [CHANGELOG.md](CHANGELOG.md).
