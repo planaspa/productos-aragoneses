@@ -61,17 +61,20 @@ El catálogo sigue el estándar [Frictionless Data Package](https://frictionless
 
 Consulta [CONSUMO.md](CONSUMO.md) para URLs de descarga directa, ejemplos en Python/JavaScript y formato JSON.
 
-### GitHub Pages
+### GitHub Pages (catálogo navegable)
 
-El catálogo web se publica en **https://planaspa.github.io/productos-aragoneses/** mediante GitHub Actions (workflow [`pages.yml`](.github/workflows/pages.yml)).
+El catálogo está en [`docs/`](docs/) y se publica en **https://planaspa.github.io/productos-aragoneses/**.
 
-Si el enlace devuelve 404, actívalo una sola vez:
+**Activación (solo una vez):**
 
-1. **Settings → Pages**
-2. En **Build and deployment → Source**, elige **GitHub Actions**
-3. Vuelve a **Actions → Publicar catálogo (GitHub Pages) → Run workflow**
+1. Abre [Settings → Pages](https://github.com/planaspa/productos-aragoneses/settings/pages)
+2. En **Build and deployment → Source**, elige **Deploy from a branch**
+3. En **Branch**, selecciona **`main`** y carpeta **`/docs`**
+4. Pulsa **Save** y espera 1–2 minutos
 
-El workflow intenta activar Pages automáticamente (`enablement: true`); si falla, el paso 2 es obligatorio.
+No uses *GitHub Actions* como source salvo que sepas configurarlo; con `/docs` basta.
+
+Si tras guardar sigue el 404, comprueba en la misma página de Settings que aparece el mensaje *«Your site is live at…»*.
 
 ## Contribuir
 
