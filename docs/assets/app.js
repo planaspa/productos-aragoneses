@@ -201,6 +201,36 @@ els.estado.addEventListener("change", applyFilters);
 
 window.addEventListener("hashchange", hashToState);
 
+const downloadToggle = document.getElementById("download-toggle");
+const downloadPanel = document.getElementById("download-panel");
+
+if (downloadToggle && downloadPanel) {
+  downloadToggle.addEventListener("click", () => {
+    const open = downloadToggle.getAttribute("aria-expanded") === "true";
+    downloadToggle.setAttribute("aria-expanded", open ? "false" : "true");
+    downloadPanel.hidden = open;
+  });
+
+  document.addEventListener("click", (event) => {
+    if (
+      !downloadPanel.hidden &&
+      !downloadPanel.contains(event.target) &&
+      !downloadToggle.contains(event.target)
+    ) {
+      downloadPanel.hidden = true;
+      downloadToggle.setAttribute("aria-expanded", "false");
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !downloadPanel.hidden) {
+      downloadPanel.hidden = true;
+      downloadToggle.setAttribute("aria-expanded", "false");
+      downloadToggle.focus();
+    }
+  });
+}
+
 (async function init() {
   hashToState();
   try {

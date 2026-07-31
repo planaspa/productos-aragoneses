@@ -6,6 +6,7 @@ from __future__ import annotations
 import csv
 import json
 import re
+import shutil
 import sys
 from datetime import date, datetime, timezone
 from pathlib import Path
@@ -99,12 +100,15 @@ def validate_all() -> list[str]:
     return errors
 
 
-def export_json() -> None:
+def export_artifacts() -> None:
     JSON_DIR.mkdir(parents=True, exist_ok=True)
     generated = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
     for name in DATASETS:
-        with (ROOT / f"{name}.csv").open(encoding="utf-8", newline="") as handle:
+        csv_src = ROOT / f"{name}.csv"
+        shutil.copy2(csv_src, JSON_DIR / f"{name}.csv")
+
+        with csv_src.open(encoding="utf-8", newline="") as handle:
             records = list(csv.DictReader(handle))
 
         payload = {
@@ -128,8 +132,8 @@ def main() -> int:
             print(f"  - {err}")
         return 1
 
-    export_json()
-    print("OK: CSV válidos y JSON actualizado en docs/datos/.")
+    export_artifacts()
+    print("OK: CSV válidos y artefactos actualizados en docs/datos/.")
     return 0
 
 

@@ -206,6 +206,82 @@ a:hover {
   color: #fff;
 }
 
+.download-menu {
+  position: relative;
+}
+
+.download-toggle {
+  cursor: pointer;
+  font: inherit;
+}
+
+.download-panel {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  z-index: 20;
+  min-width: 15rem;
+  padding: 0.65rem;
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  box-shadow: var(--shadow);
+}
+
+.download-panel[hidden] {
+  display: none;
+}
+
+.download-heading {
+  margin: 0.35rem 0 0.25rem;
+  padding: 0 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.download-heading:first-child {
+  margin-top: 0;
+}
+
+.download-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.5rem 0.55rem;
+  border-radius: 6px;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.88rem;
+}
+
+.download-item:hover {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.download-format {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.download-meta {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.download-note {
+  margin: 0.55rem 0 0;
+  padding: 0.45rem 0.35rem 0;
+  border-top: 1px solid var(--border-soft);
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+
 .link-icon {
   font-family: var(--mono);
   font-size: 0.8rem;
@@ -286,8 +362,9 @@ main {
 
 .filters {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 0.75rem;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr);
+  gap: 0.75rem 1rem;
+  align-items: end;
 }
 
 @media (max-width: 720px) {
@@ -300,36 +377,46 @@ main {
   }
 }
 
-label {
+.filter-field {
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
-  font-size: 0.82rem;
-  font-weight: 500;
-  color: var(--muted);
+  min-width: 0;
 }
 
-.search-field {
+.filter-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--muted);
+  line-height: 1.2;
+}
+
+.input-wrap {
   position: relative;
+  display: block;
 }
 
 .field-icon {
   position: absolute;
-  left: 0.85rem;
-  bottom: 0.65rem;
+  left: 0.8rem;
+  top: 50%;
+  transform: translateY(-50%);
   color: var(--muted);
-  font-size: 1rem;
+  font-size: 0.95rem;
+  line-height: 1;
   pointer-events: none;
 }
 
-.search-field input {
+.input-wrap input {
   padding-left: 2.25rem;
 }
 
 input,
 select {
+  width: 100%;
+  min-height: 2.5rem;
   font: inherit;
-  padding: 0.6rem 0.8rem;
+  padding: 0.55rem 0.8rem;
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   background: var(--bg);

@@ -34,9 +34,32 @@
         <a class="header-link" href="https://github.com/planaspa/productos-aragoneses/blob/main/CONTRIBUTING.md">
           <span class="link-icon" aria-hidden="true">+</span> Contribuir
         </a>
-        <a class="header-link" href="https://github.com/planaspa/productos-aragoneses/blob/main/CONSUMO.md">
-          <span class="link-icon" aria-hidden="true">{ }</span> API
-        </a>
+        <div class="download-menu">
+          <button type="button" class="header-link download-toggle" id="download-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="download-panel">
+            <span class="link-icon" aria-hidden="true">↓</span> Descargar datos
+          </button>
+          <div class="download-panel" id="download-panel" role="menu" hidden>
+            <p class="download-heading">Productos digitales</p>
+            <a class="download-item" role="menuitem" href="datos/listado.csv" download="listado.csv">
+              <span class="download-format">CSV</span>
+              <span class="download-meta">listado.csv</span>
+            </a>
+            <a class="download-item" role="menuitem" href="datos/listado.json" download="listado.json">
+              <span class="download-format">JSON</span>
+              <span class="download-meta">listado.json</span>
+            </a>
+            <p class="download-heading">E-commerce</p>
+            <a class="download-item" role="menuitem" href="datos/ecommerce.csv" download="ecommerce.csv">
+              <span class="download-format">CSV</span>
+              <span class="download-meta">ecommerce.csv</span>
+            </a>
+            <a class="download-item" role="menuitem" href="datos/ecommerce.json" download="ecommerce.json">
+              <span class="download-format">JSON</span>
+              <span class="download-meta">ecommerce.json</span>
+            </a>
+            <p class="download-note">Datos abiertos · CC0 1.0 · UTF-8</p>
+          </div>
+        </div>
       </nav>
     </div>
   </header>
@@ -56,19 +79,21 @@
       </div>
 
       <div class="filters">
-        <label class="search-field">
-          <span class="sr-only">Buscar</span>
-          <span class="field-icon" aria-hidden="true">⌕</span>
-          <input type="search" id="search" placeholder="Buscar producto, empresa, municipio…" autocomplete="off">
+        <label class="filter-field">
+          <span class="filter-label">Buscar</span>
+          <span class="input-wrap">
+            <span class="field-icon" aria-hidden="true">⌕</span>
+            <input type="search" id="search" placeholder="Producto, empresa, municipio…" autocomplete="off">
+          </span>
         </label>
-        <label>
-          Provincia
+        <label class="filter-field">
+          <span class="filter-label">Provincia</span>
           <select id="provincia">
             <option value="">Todas (Aragón)</option>
           </select>
         </label>
-        <label>
-          Estado
+        <label class="filter-field">
+          <span class="filter-label">Estado</span>
           <select id="estado">
             <option value="activo">Activos</option>
             <option value="">Todos</option>
@@ -94,8 +119,9 @@
         Licencia <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a>.
       </p>
       <p class="footer-links">
-        <a href="https://github.com/planaspa/productos-aragoneses/tree/main/docs/datos">JSON</a>
-        <a href="https://github.com/planaspa/productos-aragoneses/tree/main/listado.csv">CSV</a>
+        <a href="datos/listado.csv" download>CSV</a>
+        <a href="datos/listado.json" download>JSON</a>
+        <a href="https://github.com/planaspa/productos-aragoneses/blob/main/CONSUMO.md">Consumo programático</a>
       </p>
     </div>
   </footer>

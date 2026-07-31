@@ -19,7 +19,7 @@ schemas/                     ← esquema de columnas (Frictionless)
 scripts/check.py             ← validar CSV y regenerar JSON
 docs/                        ← catálogo web (GitHub Pages)
   index.html, assets/
-  datos/*.json               ← generado; no editar a mano
+  datos/*.{csv,json}         ← generado; descarga desde el catálogo web
 datapackage.json             ← metadatos del paquete de datos
 ```
 
