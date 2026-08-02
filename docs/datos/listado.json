@@ -1,8 +1,8 @@
 {
   "nombre": "listado",
-  "generado_en": "2026-07-31T21:11:47Z",
+  "generado_en": "2026-08-02T14:42:21Z",
   "licencia": "CC0-1.0",
-  "total": 81,
+  "total": 85,
   "registros": [
     {
       "id": "aficion-360",
@@ -300,9 +300,9 @@
       "descripcion": "Plataforma para facilitar el proceso de planificación, control y seguimiento de proyectos de obras. Permite integrar los datos de una obra de construcción sobre un soporte gráfico tridimensional.",
       "web": "https://www.hiberus.com/globe",
       "fecha_alta": "2022-08-22",
-      "ultima_verificacion": "2022-08-22",
+      "ultima_verificacion": "2026-08-02",
       "fuente": "https://www.hiberus.com/globe",
-      "estado": "activo"
+      "estado": "inactivo"
     },
     {
       "id": "grc-suite",
@@ -324,9 +324,9 @@
       "descripcion": "Sistema de trazabilidad medición y control de procesos productivos agroalimentarios",
       "web": "https://www.hiberus.com/agro",
       "fecha_alta": "2022-08-22",
-      "ultima_verificacion": "2022-08-22",
+      "ultima_verificacion": "2026-08-02",
       "fuente": "https://www.hiberus.com/agro",
-      "estado": "activo"
+      "estado": "inactivo"
     },
     {
       "id": "iacpos",
@@ -453,11 +453,11 @@
       "nombre": "Sintra",
       "nombre_compania": "Hiberus",
       "ubicacion_sede": "Zaragoza, Zaragoza",
-      "descripcion": "Sistema inteligente para gestión de citas y reservas a través de una interacción omnicanal mediante bots y agentes.",
-      "web": "https://www.hiberus.com/soluciones-tecnologicas",
+      "descripcion": "Solución inteligente para la gestión de citas, colas y reservas con atención omnicanal mediante chatbots, vídeo, teléfono y kioscos interactivos.",
+      "web": "https://www.hiberus.com/soluciones/sintra",
       "fecha_alta": "2022-08-22",
-      "ultima_verificacion": "2022-08-22",
-      "fuente": "https://www.hiberus.com/soluciones-tecnologicas",
+      "ultima_verificacion": "2026-08-02",
+      "fuente": "https://www.hiberus.com/soluciones/sintra",
       "estado": "activo"
     },
     {
@@ -546,37 +546,37 @@
     },
     {
       "id": "zafiro-cast",
-      "nombre": "Zafiro Cast",
+      "nombre": "Zafiro Room Entertainment",
       "nombre_compania": "Entertainment Solutions",
       "ubicacion_sede": "Zaragoza, Zaragoza",
-      "descripcion": "Solución Cast para hoteles permite facilidad de conexión con TV, IPTV y WiFi, por lo que el huésped podrá disfrutar de sus contenidos favoritos con total seguridad en tu establecimiento.",
+      "descripcion": "Room Entertainment combina Google Cast, apps de streaming y catálogo de películas para ofrecer entretenimiento seguro e interactivo en la TV de la habitación.",
       "web": "https://www.zafiro.tv/cast/",
       "fecha_alta": "2022-08-25",
-      "ultima_verificacion": "2022-08-25",
+      "ultima_verificacion": "2026-08-02",
       "fuente": "https://www.zafiro.tv/cast/",
       "estado": "activo"
     },
     {
       "id": "zafiro-digital-signage",
-      "nombre": "Zafiro Digital Signage",
+      "nombre": "Zafiro Signage",
       "nombre_compania": "Entertainment Solutions",
       "ubicacion_sede": "Zaragoza, Zaragoza",
-      "descripcion": "Solución de cartelería digital para hoteles y otros establecimientos hoteleros.",
-      "web": "https://www.zafiro.tv/digital_signage/",
+      "descripcion": "Cartelería digital centralizada para informar y promocionar servicios en zonas comunes del hotel con contenidos dinámicos gestionados desde un CMS unificado.",
+      "web": "https://www.zafiro.tv/signage/",
       "fecha_alta": "2022-08-25",
-      "ultima_verificacion": "2026-07-31",
-      "fuente": "https://www.zafiro.tv/digital_signage/",
-      "estado": "inactivo"
+      "ultima_verificacion": "2026-08-02",
+      "fuente": "https://www.zafiro.tv/signage/",
+      "estado": "activo"
     },
     {
       "id": "zafiro-mobile",
       "nombre": "Zafiro Mobile",
       "nombre_compania": "Entertainment Solutions",
       "ubicacion_sede": "Zaragoza, Zaragoza",
-      "descripcion": "App adaptable para hoteles que permite al cliente acceder a todos los servicios del hotel a través del su dispositivo móvil.",
+      "descripcion": "Aplicación web adaptable (PWA) para hoteles que centraliza servicios del establecimiento en el dispositivo móvil del huésped o del staff.",
       "web": "https://www.zafiro.tv/mobile/",
       "fecha_alta": "2022-08-25",
-      "ultima_verificacion": "2022-08-25",
+      "ultima_verificacion": "2026-08-02",
       "fuente": "https://www.zafiro.tv/mobile/",
       "estado": "activo"
     },
@@ -585,10 +585,10 @@
       "nombre": "Zafiro TV",
       "nombre_compania": "Entertainment Solutions",
       "ubicacion_sede": "Zaragoza, Zaragoza",
-      "descripcion": "Solución completa IPTV para hoteles permite ofrecer un sistema de televisión más completo para el huésped.",
+      "descripcion": "Solución IPTV interactiva para hoteles con canales personalizables, widgets, integración PMS y gestión centralizada desde un CMS en la nube.",
       "web": "https://www.zafiro.tv/iptv/",
       "fecha_alta": "2022-08-25",
-      "ultima_verificacion": "2022-08-25",
+      "ultima_verificacion": "2026-08-02",
       "fuente": "https://www.zafiro.tv/iptv/",
       "estado": "activo"
     },
@@ -597,10 +597,10 @@
       "nombre": "Zafiro WiFi",
       "nombre_compania": "Entertainment Solutions",
       "ubicacion_sede": "Zaragoza, Zaragoza",
-      "descripcion": "Solución WiFi para hoteles que facilita la conexión en un entorno seguro para el huésped.",
+      "descripcion": "Gestión de red WiFi para entornos hospitality con acceso seguro del huésped e integración con el resto del ecosistema ZAFIRO.",
       "web": "https://www.zafiro.tv/wifi/",
       "fecha_alta": "2022-08-25",
-      "ultima_verificacion": "2022-08-25",
+      "ultima_verificacion": "2026-08-02",
       "fuente": "https://www.zafiro.tv/wifi/",
       "estado": "activo"
     },
@@ -828,9 +828,9 @@
       "descripcion": "Servicio de posicionamiento de marcas en plataformas de IA generativa como ChatGPT, Gemini y Perplexity.",
       "web": "https://www.hiberus.com/soluciones/sherlook",
       "fecha_alta": "2026-07-31",
-      "ultima_verificacion": "2026-07-31",
+      "ultima_verificacion": "2026-08-02",
       "fuente": "https://www.hiberus.com/soluciones/sherlook",
-      "estado": "activo"
+      "estado": "inactivo"
     },
     {
       "id": "iris360",
@@ -974,6 +974,54 @@
       "fecha_alta": "2026-07-31",
       "ultima_verificacion": "2026-07-31",
       "fuente": "https://www.septer.es/plataformas-y-aplicaciones/",
+      "estado": "activo"
+    },
+    {
+      "id": "atlas",
+      "nombre": "Atlas",
+      "nombre_compania": "Hiberus",
+      "ubicacion_sede": "Zaragoza, Zaragoza",
+      "descripcion": "Software en la nube para centralizar, organizar y gestionar contratos y facturas empresariales con alertas, calendario y flujos de trabajo personalizables.",
+      "web": "https://www.hiberus.com/soluciones/atlas",
+      "fecha_alta": "2026-08-02",
+      "ultima_verificacion": "2026-08-02",
+      "fuente": "https://www.hiberus.com/soluciones/atlas",
+      "estado": "activo"
+    },
+    {
+      "id": "found",
+      "nombre": "Found",
+      "nombre_compania": "Hiberus",
+      "ubicacion_sede": "Zaragoza, Zaragoza",
+      "descripcion": "Store locator omnicanal para crear fichas personalizables por punto de venta, optimizar SEO local e integrar citas previas, reseñas y Google My Business.",
+      "web": "https://www.hiberus.com/soluciones/found",
+      "fecha_alta": "2026-08-02",
+      "ultima_verificacion": "2026-08-02",
+      "fuente": "https://www.hiberus.com/soluciones/found",
+      "estado": "activo"
+    },
+    {
+      "id": "osiris",
+      "nombre": "Osiris",
+      "nombre_compania": "Hiberus",
+      "ubicacion_sede": "Zaragoza, Zaragoza",
+      "descripcion": "Ecosistema modular para digitalizar empresas avícolas con trazabilidad de huevo y pienso, gestión de almacenes, logística, cuadros de mando e integración con ERP.",
+      "web": "https://www.hiberus.com/soluciones/osiris",
+      "fecha_alta": "2026-08-02",
+      "ultima_verificacion": "2026-08-02",
+      "fuente": "https://www.hiberus.com/soluciones/osiris",
+      "estado": "activo"
+    },
+    {
+      "id": "zafiro-guest",
+      "nombre": "Zafiro Guest",
+      "nombre_compania": "Entertainment Solutions",
+      "ubicacion_sede": "Zaragoza, Zaragoza",
+      "descripcion": "Experiencia integral para huéspedes hoteleros con pre check-in online, llave digital, check-out express e integración con TV, WiFi y PMS del establecimiento.",
+      "web": "https://www.zafiro.tv/guest/",
+      "fecha_alta": "2026-08-02",
+      "ultima_verificacion": "2026-08-02",
+      "fuente": "https://www.zafiro.tv/guest/",
       "estado": "activo"
     }
   ]
