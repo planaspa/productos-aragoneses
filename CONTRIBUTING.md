@@ -51,7 +51,41 @@ No borres filas. Cambia `estado` a `inactivo` y actualiza `ultima_verificacion`.
 
 ## Validación
 
-El CI ejecuta `scripts/check.py`: valida el esquema y comprueba que el JSON esté sincronizado.
+El CI ejecuta `scripts/check.py` y comprueba que `docs/datos/` coincida con lo generado a partir de los CSV.
+
+### Flujo obligatorio al editar datos
+
+1. Modifica solo los CSV de origen (`listado.csv` o `ecommerce.csv`).
+2. Ejecuta **una vez** `python3 scripts/check.py`.
+3. Incluye en el commit **tanto el CSV como** los artefactos regenerados en `docs/datos/` (`*.csv` y `*.json`).
+
+```bash
+python3 scripts/check.py
+git add listado.csv ecommerce.csv docs/datos/
+```
+
+4. Comprueba localmente que el JSON está sincronizado (debe no mostrar diferencias):
+
+```bash
+python3 scripts/check.py && git diff --exit-code docs/datos/
+```
+
+### Por qué falla el CI con «Ejecuta: python3 scripts/check.py»
+
+| Causa | Qué hacer |
+|-------|-----------|
+| No ejecutaste `check.py` tras editar el CSV | Ejecuta el script y commitea `docs/datos/`. |
+| Solo commiteaste el CSV, no el JSON | Añade `docs/datos/listado.json`, `listado.csv`, etc. |
+| Editaste a mano `docs/datos/*.json` | No edites esos ficheros; regenera con el script. |
+| Cambiaste datos pero no `ultima_verificacion` | Actualiza esa fecha al verificar el producto; el JSON usa la fecha más reciente del CSV como `generado_en`. |
+
+Los JSON en `docs/datos/` **no son fuente de verdad**: se generan automáticamente. El campo `generado_en` se calcula de forma estable a partir de la `ultima_verificacion` más reciente de cada dataset, no del reloj del sistema, para que CI y desarrollo local produzcan el mismo resultado.
+
+### Qué valida el CI
+
+1. Esquema Frictionless de los CSV (`schemas/*.schema.json`).
+2. Regeneración de `docs/datos/` con `scripts/check.py`.
+3. Que no queden diferencias respecto al repositorio (`git diff --exit-code docs/datos/`).
 
 ## Más información
 

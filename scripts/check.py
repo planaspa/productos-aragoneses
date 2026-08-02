@@ -8,7 +8,7 @@ import json
 import re
 import shutil
 import sys
-from datetime import date, datetime, timezone
+from datetime import date
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -100,9 +100,16 @@ def validate_all() -> list[str]:
     return errors
 
 
+def generated_timestamp(records: list[dict[str, str]]) -> str:
+    """Marca de tiempo estable derivada de los datos, no del reloj del sistema."""
+    dates = [row["ultima_verificacion"] for row in records if row.get("ultima_verificacion")]
+    if not dates:
+        return "1970-01-01T00:00:00Z"
+    return f"{max(dates)}T00:00:00Z"
+
+
 def export_artifacts() -> None:
     JSON_DIR.mkdir(parents=True, exist_ok=True)
-    generated = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
     for name in DATASETS:
         csv_src = ROOT / f"{name}.csv"
@@ -113,7 +120,7 @@ def export_artifacts() -> None:
 
         payload = {
             "nombre": name,
-            "generado_en": generated,
+            "generado_en": generated_timestamp(records),
             "licencia": "CC0-1.0",
             "total": len(records),
             "registros": records,
